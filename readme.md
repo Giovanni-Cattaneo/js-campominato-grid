@@ -9,7 +9,12 @@ Ci saranno quindi 10 caselle per ognuna delle 10 righe.
 Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 
 ## Steps
-
+- Mettere in pagina un bottone 
+- creare una variabile collegata al bottone
+- creare una costante di markup contenente i box
+- creare una costante col numero delle celle
+- creare un ciclo for che genere i box fino al raggiugnimento del n. delle celle
+- al click aggiungere tramite toggle una classe stilizzata con un background diverso
 
 ## Tools
 
