@@ -10,9 +10,12 @@ const cellNumber = 100;
 
 const markup = `<div class="box"></div>`;
 
-for (let index = 0; index < cellNumber; index++) {
+btn.addEventListener("click", play)
+
+function play (){
+ for (let index = 0; index < cellNumber; index++) {
     container.insertAdjacentHTML("beforeend", markup)
-    
+    container.style.backgroundColor = "red"
 }
 
 let myArray = []
@@ -35,4 +38,6 @@ for (let index = 0; index < box.length; index++) {
         element.classList.toggle("blue")
         console.log(myArray[index]);
     })
+}   
 }
+

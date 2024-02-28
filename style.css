@@ -4,11 +4,19 @@
     box-sizing: border-box;
 }
 
+body{
+    text-align: center;
+}
+
+#btn{
+    padding: 2rem;
+    background-color: yellow;
+    margin: 1.5rem 0;
+}
 .container{
     width: 1000px;
     height: 1000px;
     margin: auto;
-    background-color: red;
     display: flex;
     flex-wrap: wrap;
 }
