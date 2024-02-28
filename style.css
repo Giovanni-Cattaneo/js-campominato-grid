@@ -19,6 +19,7 @@ body{
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 3rem;
 }
 
 .box{
