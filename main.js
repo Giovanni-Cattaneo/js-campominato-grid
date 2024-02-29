@@ -29,7 +29,7 @@ function play() {
         container.style.height = "1000px"
         for (let index = 0; index < cellNumber; index++) {
             container.insertAdjacentHTML("beforeend", markup)// inseriamo il markup
-            container.style.backgroundColor = "red" // diamo uno stile al bg solo al click dell'avvio del gioco
+            container.style.backgroundColor = "blue" // diamo uno stile al bg solo al click dell'avvio del gioco
         }
 
         let myArray = []
@@ -56,17 +56,20 @@ function play() {
 
         for (let index = 0; index < box.length; index++) {
             const element = box[index];
-            const sharedNumbers = skullArray.indexOf(myArray[index]); // indexof() ci permette di paragonare gli indici degli array per verificare se combaciano in tutto o in parte, il risultato è o -1 se non combaciano oppure la posizione dell'elemento nell'array
+
+            element.addEventListener("click", function () {
+                
+                const sharedNumbers = skullArray.indexOf(myArray[index]); // indexof() ci permette di paragonare gli indici degli array per verificare se combaciano in tutto o in parte, il risultato è o -1 se non combaciano oppure la posizione dell'elemento nell'array
                 
                     if (sharedNumbers !== -1) { // !== controlla se il avlore dell'elemento non corrisponde a -1, se non corrisponde allora l'elemento è condiviso senno non lo è ci aspettiamo 84 -1 in console
                         const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
+                        element.classList.add("red")
                         boxElement.innerHTML = skull;
+                        
                     } else {
                         element.innerHTML = myArray[index]
+                        element.classList.add("green")
                     }
-
-            element.addEventListener("click", function () {
-                element.classList.toggle("blue")
                 
                 
 
