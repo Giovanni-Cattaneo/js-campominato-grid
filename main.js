@@ -26,21 +26,17 @@ btn.addEventListener("click", play)
 function play() {
     container.innerHTML = ""
     if (options.value === "standard") {
-        cellNumber = 100;
-        container.style.width = "1000px"
-        container.style.height = "1000px"
-        for (let index = 0; index < cellNumber; index++) {
-            container.insertAdjacentHTML("beforeend", markup)// inseriamo il markup
-            container.style.backgroundColor = "blue" // diamo uno stile al bg solo al click dell'avvio del gioco
-        }
+        generateGrid(100, container, markup, "1000px", "1000px")
+
 
         let myArray = []
 
-        generateMyArray(myArray, cellNumber)
+        generateMyArray(myArray, 100)
+
 
 
         let skullArray = []
-        
+
         generateSkullArray(skullArray)
 
         console.log(myArray, skullArray);
@@ -49,41 +45,22 @@ function play() {
 
         for (let index = 0; index < box.length; index++) {
             const element = box[index];
-
-            element.addEventListener("click", function clickBox() {
-                
-                const sharedNumbers = skullArray.indexOf(myArray[index]); // indexof() ci permette di paragonare gli indici degli array per verificare se combaciano in tutto o in parte, il risultato è o -1 se non combaciano oppure la posizione dell'elemento nell'array
-                
-                    if (sharedNumbers !== -1) { // !== controlla se il avlore dell'elemento non corrisponde a -1, se non corrisponde allora l'elemento è condiviso senno non lo è ci aspettiamo 84 -1 in console
-                        const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
-                        element.classList.add("red")
-                        boxElement.innerHTML = skull;
-                        console.log("You lose");
-                        element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
-                        
-                    } else {
-                        element.innerHTML = heart
-                        element.classList.add("green")
-                    }
-            })
+            element.addEventListener("click", function() {
+                clickBox(skullArray, myArray, element, index, box, skull, heart);
+            });
         }
 
     } else if (options.value === "complesso") {
-        cellNumber = 81;
-        container.style.width = "900px"
-        container.style.height = "900px"
-        for (let index = 0; index < cellNumber; index++) {
-            container.insertAdjacentHTML("beforeend", markup)// inseriamo il markup
-            container.style.backgroundColor = "blue" // diamo uno stile al bg solo al click dell'avvio del gioco
-        }
+
+        generateGrid(81, container, markup, "900px", "900px")
 
         let myArray = []
 
-        generateMyArray(myArray, cellNumber)
+        generateMyArray(myArray, 81)
 
 
         let skullArray = []
-        
+
         generateSkullArray(skullArray)
 
         console.log(myArray, skullArray);
@@ -94,38 +71,33 @@ function play() {
             const element = box[index];
 
             element.addEventListener("click", function clickBox() {
-                
+
                 const sharedNumbers = skullArray.indexOf(myArray[index]); // indexof() ci permette di paragonare gli indici degli array per verificare se combaciano in tutto o in parte, il risultato è o -1 se non combaciano oppure la posizione dell'elemento nell'array
-                
-                    if (sharedNumbers !== -1) { // !== controlla se il avlore dell'elemento non corrisponde a -1, se non corrisponde allora l'elemento è condiviso senno non lo è ci aspettiamo 84 -1 in console
-                        const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
-                        element.classList.add("red")
-                        boxElement.innerHTML = skull;
-                        console.log("You lose");
-                        element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
-                        
-                    } else {
-                        element.innerHTML = heart
-                        element.classList.add("green")
-                    }
+
+                if (sharedNumbers !== -1) { // !== controlla se il avlore dell'elemento non corrisponde a -1, se non corrisponde allora l'elemento è condiviso senno non lo è ci aspettiamo 84 -1 in console
+                    const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
+                    element.classList.add("red")
+                    boxElement.innerHTML = skull;
+                    console.log("You lose");
+                    element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
+
+                } else {
+                    element.innerHTML = heart
+                    element.classList.add("green")
+                }
             })
         }
     } else if (options.value === "impossibile") {
-        cellNumber = 49;
-        container.style.width = "700px"
-        container.style.height = "700px"
-        for (let index = 0; index < cellNumber; index++) {
-            container.insertAdjacentHTML("beforeend", markup)// inseriamo il markup
-            container.style.backgroundColor = "blue" // diamo uno stile al bg solo al click dell'avvio del gioco
-        }
+
+        generateGrid(49, container, markup, "700px", "700px")
 
         let myArray = []
 
-        generateMyArray(myArray, cellNumber)
+        generateMyArray(myArray, 49)
 
 
         let skullArray = []
-        
+
         generateSkullArray(skullArray)
 
         console.log(myArray, skullArray);
@@ -136,24 +108,24 @@ function play() {
             const element = box[index];
 
             element.addEventListener("click", function clickBox() {
-                
+
                 const sharedNumbers = skullArray.indexOf(myArray[index]); // indexof() ci permette di paragonare gli indici degli array per verificare se combaciano in tutto o in parte, il risultato è o -1 se non combaciano oppure la posizione dell'elemento nell'array
-                
-                    if (sharedNumbers !== -1) { // !== controlla se il avlore dell'elemento non corrisponde a -1, se non corrisponde allora l'elemento è condiviso senno non lo è ci aspettiamo 84 -1 in console
-                        const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
-                        element.classList.add("red")
-                        boxElement.innerHTML = skull;
-                        console.log("You lose");
-                        element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
-                        
-                    } else {
-                        element.innerHTML = heart
-                        element.classList.add("green")
-                    }
+
+                if (sharedNumbers !== -1) { // !== controlla se il avlore dell'elemento non corrisponde a -1, se non corrisponde allora l'elemento è condiviso senno non lo è ci aspettiamo 84 -1 in console
+                    const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
+                    element.classList.add("red")
+                    boxElement.innerHTML = skull;
+                    console.log("You lose");
+                    element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
+
+                } else {
+                    element.innerHTML = heart
+                    element.classList.add("green")
+                }
             })
         }
 
-}
+    }
 }
 
 
@@ -169,12 +141,40 @@ function generateMyArray(myArray, cellNumber) {
     return myArray
 }
 
-function generateSkullArray(skullArray){
+function generateSkullArray(skullArray) {
     for (let index = 0; skullArray.length < 17; index++) {
         const randomNumber = getRndInteger(1, 100);
         if (!skullArray.includes(randomNumber)) { // Verifica se il numero casuale non è già presente nell'array
-             skullArray.push(randomNumber);
+            skullArray.push(randomNumber);
         }
     }
     return skullArray
+}
+
+function generateGrid(cellNumber, container, markup, width, height) {
+    cellNumber = cellNumber;
+    container.style.width = width
+    container.style.height = height
+    for (let index = 0; index < cellNumber; index++) {
+        container.insertAdjacentHTML("beforeend", markup)// inseriamo il markup
+        container.style.backgroundColor = "blue" // diamo uno stile al bg solo al click dell'avvio del gioco
+    }
+}
+
+function clickBox(skullArray, myArray, element, index, box, skull, heart) {
+    index = myArray[index]
+    box = box[index]
+    const sharedNumbers = skullArray.indexOf(myArray[index]); // indexof() ci permette di paragonare gli indici degli array per verificare se combaciano in tutto o in parte, il risultato è o -1 se non combaciano oppure la posizione dell'elemento nell'array
+
+    if (sharedNumbers !== -1) { // !== controlla se il avlore dell'elemento non corrisponde a -1, se non corrisponde allora l'elemento è condiviso senno non lo è ci aspettiamo 84 -1 in console
+        const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
+        element.classList.add("red")
+        element.innerHTML = skull;
+        console.log("You lose");
+        // element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
+
+    } else {
+        element.innerHTML = heart
+        element.classList.add("green")
+    }
 }
