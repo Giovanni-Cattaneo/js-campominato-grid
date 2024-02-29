@@ -22,17 +22,17 @@ btn.addEventListener("click", play)
 function play() {
     container.innerHTML = ""
     if (options.value === "standard") {
-        cellNumber = 100;
+        cellNumber = 101;
         container.style.width = "1000px"
         container.style.height = "1000px"
-        for (let index = 0; index < cellNumber; index++) {
+        for (let index = 1; index < cellNumber; index++) {
             container.insertAdjacentHTML("beforeend", markup)// inseriamo il markup
             container.style.backgroundColor = "red" // diamo uno stile al bg solo al click dell'avvio del gioco
         }
 
         let myArray = []
 
-        for (let index = 0; myArray.length < 100; index++) {// serve a creare 100 numeri consecutivi
+        for (let index = 1; myArray.length < cellNumber; index++) {// serve a creare 100 numeri consecutivi
             const element = myArray[index];
             myArray.push(index);// pusha nell'array vuota ogni numero man mano che viene generato
         }
@@ -42,7 +42,7 @@ function play() {
         const box = document.getElementsByClassName("box")// ci permette di cerare un array di box accessibili alle funzioni, ora sono nodi della dom
         console.log(box);
 
-        for (let index = 0; index < box.length; index++) {
+        for (let index = 1; index < box.length; index++) {
             const element = box[index];
 
             console.log(element);
@@ -55,10 +55,10 @@ function play() {
         }
 
     } else if (options.value === "complesso") {
-        cellNumber = 81;
+        cellNumber = 82;
         container.style.width = "900px"
         container.style.height = "900px"
-        for (let index = 0; index < cellNumber; index++) {
+        for (let index = 1; index < cellNumber; index++) {
             container.insertAdjacentHTML("beforeend", markup)// inseriamo il markup
             container.style.backgroundColor = "red" // diamo uno stile al bg solo al click dell'avvio del gioco
 
@@ -66,7 +66,7 @@ function play() {
 
         let myArray = []
 
-        for (let index = 0; myArray.length < 100; index++) {// serve a creare 100 numeri consecutivi
+        for (let index = 1; myArray.length < cellNumber; index++) {// serve a creare 100 numeri consecutivi
             const element = myArray[index];
             myArray.push(index);// pusha nell'array vuota ogni numero man mano che viene generato
         }
@@ -76,7 +76,7 @@ function play() {
         const box = document.getElementsByClassName("box")// ci permette di cerare un array di box accessibili alle funzioni, ora sono nodi della dom
         console.log(box);
 
-        for (let index = 0; index < box.length; index++) {
+        for (let index = 1; index < box.length; index++) {
             const element = box[index];
 
             console.log(element);
@@ -97,7 +97,7 @@ function play() {
 
         let myArray = []
 
-        for (let index = 0; myArray.length < 100; index++) {// serve a creare 100 numeri consecutivi
+        for (let index = 1; myArray.length < cellNumber; index++) {// serve a creare 100 numeri consecutivi
             const element = myArray[index];
             myArray.push(index);// pusha nell'array vuota ogni numero man mano che viene generato
         }
@@ -107,7 +107,7 @@ function play() {
         const box = document.getElementsByClassName("box")// ci permette di cerare un array di box accessibili alle funzioni, ora sono nodi della dom
         console.log(box);
 
-        for (let index = 0; index < box.length; index++) {
+        for (let index = 1; index < box.length; index++) {
             const element = box[index];
 
             console.log(element);
