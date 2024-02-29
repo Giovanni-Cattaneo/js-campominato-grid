@@ -23,6 +23,8 @@ function play() {
     container.innerHTML = ""
     if (options.value === "standard") {
         cellNumber = 100;
+        container.style.width = "1000px"
+        container.style.height = "1000px"
         for (let index = 0; index < cellNumber; index++) {
             container.insertAdjacentHTML("beforeend", markup)// inseriamo il markup
             container.style.backgroundColor = "red" // diamo uno stile al bg solo al click dell'avvio del gioco
