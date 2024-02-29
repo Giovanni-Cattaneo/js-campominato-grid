@@ -5,7 +5,15 @@
 }
 
 body{
-    text-align: center;
+
+}
+
+.controls{
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    margin: auto;
+    margin-bottom: 1rem;
 }
 
 #btn{
