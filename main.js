@@ -10,6 +10,8 @@ let cellNumber;
 
 const markup = `<div class="box"></div>`; // serve a creare i div con classe box in html
 
+const skull = `<i class="fa-solid fa-skull"></i>`
+
 const options = document.getElementById("select")
 
 console.log(options);
@@ -54,20 +56,19 @@ function play() {
 
         for (let index = 0; index < box.length; index++) {
             const element = box[index];
-            const sharedNumbers = myArray.indexOf(skullArray[index]);
-            console.log(sharedNumbers);
+            const sharedNumbers = skullArray.indexOf(myArray[index]); // indexof() ci permette di paragonare gli indici degli array per verificare se combaciano in tutto o in parte, il risultato è o -1 se non combaciano oppure la posizione dell'elemento nell'array
+                
+                    if (sharedNumbers !== -1) { // !== controlla se il avlore dell'elemento non corrisponde a -1, se non corrisponde allora l'elemento è condiviso senno non lo è ci aspettiamo 84 -1 in console
+                        const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
+                        boxElement.innerHTML = skull;
+                    } else {
+                        element.innerHTML = myArray[index]
+                    }
 
             element.addEventListener("click", function () {
                 element.classList.toggle("blue")
-                element.innerHTML = myArray[index]
-
-                for (let i = 0; i < myArray.length; i++) {
-                    const sharedNumbers = skullArray.indexOf(myArray[i]); // indexof() ci permette di paragonare gli indici degli array per verificare se combaciano in tutto o in parte, il risultato è o -1 se non combaciano oppure la posizione dell'elemento nell'array
-                    if (sharedNumbers !== -1) { // !== controlla se il avlore dell'elemento non corrisponde a -1, se non corrisponde allora l'elemento è condiviso senno non lo è ci aspettiamo 84 -1 in console
-                        const boxElement = box[i]; // costante creata per recuperare index di box dalla dom
-                        boxElement.innerHTML = "hello";
-                    }
-                }
+                
+                
 
 
 
