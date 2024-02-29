@@ -25,7 +25,7 @@ function play() {
         cellNumber = 101;
         container.style.width = "1000px"
         container.style.height = "1000px"
-        for (let index = 1; index < cellNumber; index++) {
+        for (let index = 0; index < cellNumber; index++) {
             container.insertAdjacentHTML("beforeend", markup)// inseriamo il markup
             container.style.backgroundColor = "red" // diamo uno stile al bg solo al click dell'avvio del gioco
         }
@@ -42,7 +42,7 @@ function play() {
         const box = document.getElementsByClassName("box")// ci permette di cerare un array di box accessibili alle funzioni, ora sono nodi della dom
         console.log(box);
 
-        for (let index = 1; index < box.length; index++) {
+        for (let index = 0; index < box.length; index++) {
             const element = box[index];
 
             console.log(element);
@@ -76,7 +76,7 @@ function play() {
         const box = document.getElementsByClassName("box")// ci permette di cerare un array di box accessibili alle funzioni, ora sono nodi della dom
         console.log(box);
 
-        for (let index = 1; index < box.length; index++) {
+        for (let index = 0; index < box.length; index++) {
             const element = box[index];
 
             console.log(element);
@@ -87,10 +87,10 @@ function play() {
             })
         }
     } else if (options.value === "impossibile") {
-        cellNumber = 49;
+        cellNumber = 50;
         container.style.width = "700px"
         container.style.height = "700px"
-        for (let index = 0; index < cellNumber; index++) {
+        for (let index = 1; index < cellNumber; index++) {
             container.insertAdjacentHTML("beforeend", markup)// inseriamo il markup
             container.style.backgroundColor = "red" // diamo uno stile al bg solo al click dell'avvio del gioco
         }
@@ -107,7 +107,7 @@ function play() {
         const box = document.getElementsByClassName("box")// ci permette di cerare un array di box accessibili alle funzioni, ora sono nodi della dom
         console.log(box);
 
-        for (let index = 1; index < box.length; index++) {
+        for (let index = 0; index < box.length; index++) {
             const element = box[index];
 
             console.log(element);
