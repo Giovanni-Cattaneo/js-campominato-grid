@@ -124,8 +124,9 @@ function play() {
 
 
 
-// function clickBox() {
+//  function clickBox() {
+//     element = box[index]
 //     element.classList.toggle("blue")
 //     console.log(myArray[index]);
 //     element.innerHTML = myArray[index]
-// }
+//  }
