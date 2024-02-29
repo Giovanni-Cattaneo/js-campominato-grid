@@ -32,12 +32,23 @@ function play() {
 
         let myArray = []
 
+        let skullArray = []
+
+      
+
         for (let index = 1; myArray.length < cellNumber; index++) {// serve a creare 100 numeri consecutivi
             const element = myArray[index];
             myArray.push(index);// pusha nell'array vuota ogni numero man mano che viene generato
         }
 
-        console.log(myArray);
+        for (let index = 0; skullArray.length < 16; index++) {
+            const randomNumber = getRndInteger(1, 100);
+            if (!skullArray.includes(randomNumber)) { // Verifica se il numero casuale non è già presente nell'array
+                skullArray.push(randomNumber);
+            }
+        }
+        
+        console.log(myArray, skullArray);
 
         const box = document.getElementsByClassName("box")// ci permette di cerare un array di box accessibili alle funzioni, ora sono nodi della dom
         console.log(box);
@@ -49,8 +60,6 @@ function play() {
             element.addEventListener("click", function () {
                 element.classList.toggle("blue")
                 console.log(myArray[index]);
-                element.innerHTML = myArray[index]
-
             })
         }
 
@@ -123,6 +132,10 @@ function play() {
 }
 
 
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
+
 
 //  function clickBox() {
 //     element = box[index]
@@ -137,3 +150,4 @@ function generateGrid(cellNumber){
 }
 
 */
+
