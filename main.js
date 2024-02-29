@@ -22,7 +22,7 @@ btn.addEventListener("click", play)
 function play() {
     container.innerHTML = ""
     if (options.value === "standard") {
-        cellNumber = 101;
+        cellNumber = 100;
         container.style.width = "1000px"
         container.style.height = "1000px"
         for (let index = 0; index < cellNumber; index++) {
@@ -121,3 +121,11 @@ function play() {
     }
 
 }
+
+
+
+// function clickBox() {
+//     element.classList.toggle("blue")
+//     console.log(myArray[index]);
+//     element.innerHTML = myArray[index]
+// }
