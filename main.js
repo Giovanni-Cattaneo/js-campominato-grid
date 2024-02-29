@@ -36,21 +36,12 @@ function play() {
 
         let myArray = []
 
+        generateMyArray(myArray, cellNumber)
+
+
         let skullArray = []
-
-
-
-        for (let index = 0; myArray.length < cellNumber; index++) {// serve a creare 100 numeri consecutivi
-            const element = myArray[index];
-            myArray.push(index);// pusha nell'array vuota ogni numero man mano che viene generato
-        }
-
-        for (let index = 0; skullArray.length < 17; index++) {
-            const randomNumber = getRndInteger(1, 100);
-            if (!skullArray.includes(randomNumber)) { // Verifica se il numero casuale non è già presente nell'array
-                skullArray.push(randomNumber);
-            }
-        }
+        
+        generateSkullArray(skullArray)
 
         console.log(myArray, skullArray);
 
@@ -88,21 +79,12 @@ function play() {
 
         let myArray = []
 
+        generateMyArray(myArray, cellNumber)
+
+
         let skullArray = []
-
-
-
-        for (let index = 0; myArray.length < cellNumber; index++) {// serve a creare 100 numeri consecutivi
-            const element = myArray[index];
-            myArray.push(index);// pusha nell'array vuota ogni numero man mano che viene generato
-        }
-
-        for (let index = 0; skullArray.length < 17; index++) {
-            const randomNumber = getRndInteger(1, 100);
-            if (!skullArray.includes(randomNumber)) { // Verifica se il numero casuale non è già presente nell'array
-                skullArray.push(randomNumber);
-            }
-        }
+        
+        generateSkullArray(skullArray)
 
         console.log(myArray, skullArray);
 
@@ -139,21 +121,12 @@ function play() {
 
         let myArray = []
 
+        generateMyArray(myArray, cellNumber)
+
+
         let skullArray = []
-
-
-
-        for (let index = 0; myArray.length < cellNumber; index++) {// serve a creare 100 numeri consecutivi
-            const element = myArray[index];
-            myArray.push(index);// pusha nell'array vuota ogni numero man mano che viene generato
-        }
-
-        for (let index = 0; skullArray.length < 17; index++) {
-            const randomNumber = getRndInteger(1, 100);
-            if (!skullArray.includes(randomNumber)) { // Verifica se il numero casuale non è già presente nell'array
-                skullArray.push(randomNumber);
-            }
-        }
+        
+        generateSkullArray(skullArray)
 
         console.log(myArray, skullArray);
 
@@ -186,4 +159,22 @@ function play() {
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function generateMyArray(myArray, cellNumber) {
+    for (let index = 0; myArray.length < cellNumber; index++) {// serve a creare 100 numeri consecutivi
+        const element = myArray[index];
+        myArray.push(index);// pusha nell'array vuota ogni numero man mano che viene generato
+    }
+    return myArray
+}
+
+function generateSkullArray(skullArray){
+    for (let index = 0; skullArray.length < 17; index++) {
+        const randomNumber = getRndInteger(1, 100);
+        if (!skullArray.includes(randomNumber)) { // Verifica se il numero casuale non è già presente nell'array
+             skullArray.push(randomNumber);
+        }
+    }
+    return skullArray
 }
