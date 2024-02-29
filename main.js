@@ -20,6 +20,7 @@ btn.addEventListener("click", play)
  * Al click del bottone genera la griglia di gioco
  */
 function play (){
+    container.innerHTML =""
     if (options.value === "standard") {
         cellNumber = 100;
        for (let index = 0; index < cellNumber; index++) {
@@ -46,6 +47,7 @@ for (let index = 0; index < box.length; index++) {
     element.addEventListener("click", function(){
         element.classList.toggle("blue")
         console.log(myArray[index]);
+        
     })
 }   
  
@@ -56,6 +58,7 @@ for (let index = 0; index < box.length; index++) {
         for (let index = 0; index < cellNumber; index++) {
             container.insertAdjacentHTML("beforeend", markup)// inseriamo il markup
             container.style.backgroundColor = "red" // diamo uno stile al bg solo al click dell'avvio del gioco
+            
         }
         
         let myArray = []
