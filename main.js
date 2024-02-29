@@ -57,7 +57,7 @@ function play() {
         for (let index = 0; index < box.length; index++) {
             const element = box[index];
 
-            element.addEventListener("click", function () {
+            element.addEventListener("click", function clickBox() {
                 
                 const sharedNumbers = skullArray.indexOf(myArray[index]); // indexof() ci permette di paragonare gli indici degli array per verificare se combaciano in tutto o in parte, il risultato è o -1 se non combaciano oppure la posizione dell'elemento nell'array
                 
@@ -65,6 +65,8 @@ function play() {
                         const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
                         element.classList.add("red")
                         boxElement.innerHTML = skull;
+                        console.log("You lose");
+                        boxElement.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
                         
                     } else {
                         element.innerHTML = myArray[index]
