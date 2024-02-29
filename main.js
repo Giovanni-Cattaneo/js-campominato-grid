@@ -130,3 +130,10 @@ function play() {
 //     console.log(myArray[index]);
 //     element.innerHTML = myArray[index]
 //  }
+
+/* 
+function generateGrid(cellNumber){
+
+}
+
+*/
