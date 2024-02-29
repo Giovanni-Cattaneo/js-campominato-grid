@@ -187,30 +187,3 @@ function play() {
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-
-//  function clickBox() {
-//     element = box[index]
-//     element.classList.toggle("blue")
-//     console.log(myArray[index]);
-//     element.innerHTML = myArray[index]
-//  }
-
-/* 
-function generateGrid(cellNumber){
-
-}
-
-*/
-// function clickBox() {
-//     const sharedNumbers = skullArray.indexOf(myArray[index]);
-//     if (sharedNumbers !== -1) {
-//         const boxElement = box[index];
-//         element.classList.add("red");
-//         boxElement.innerHTML = skull;
-//         console.log("You lose");
-//         boxElement.removeEventListener("click", clickBox);
-//     } else {
-//         element.innerHTML = myArray[index];
-//         element.classList.add("green");
-//     }
