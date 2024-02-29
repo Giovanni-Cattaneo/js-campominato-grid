@@ -51,15 +51,15 @@ function play() {
         console.log(myArray, skullArray);
 
         const box = document.getElementsByClassName("box")// ci permette di cerare un array di box accessibili alle funzioni, ora sono nodi della dom
-        console.log(box);
 
         for (let index = 0; index < box.length; index++) {
             const element = box[index];
 
-            console.log(element);
             element.addEventListener("click", function () {
                 element.classList.toggle("blue")
                 console.log(myArray[index]);
+                element.innerHTML = myArray[index]       
+                
             })
         }
 
