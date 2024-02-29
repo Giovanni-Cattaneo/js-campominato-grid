@@ -28,12 +28,9 @@ function play() {
     if (options.value === "standard") {
         generateGrid(100, container, markup, "1000px", "1000px")
 
-
         let myArray = []
 
         generateMyArray(myArray, 100)
-
-
 
         let skullArray = []
 
@@ -45,7 +42,7 @@ function play() {
 
         for (let index = 0; index < box.length; index++) {
             const element = box[index];
-            element.addEventListener("click", function() {
+            element.addEventListener("click", function () {
                 clickBox(skullArray, myArray, element, index, box, skull, heart);
             });
         }
@@ -67,26 +64,14 @@ function play() {
 
         const box = document.getElementsByClassName("box")// ci permette di cerare un array di box accessibili alle funzioni, ora sono nodi della dom
 
+
         for (let index = 0; index < box.length; index++) {
             const element = box[index];
-
-            element.addEventListener("click", function clickBox() {
-
-                const sharedNumbers = skullArray.indexOf(myArray[index]); // indexof() ci permette di paragonare gli indici degli array per verificare se combaciano in tutto o in parte, il risultato è o -1 se non combaciano oppure la posizione dell'elemento nell'array
-
-                if (sharedNumbers !== -1) { // !== controlla se il avlore dell'elemento non corrisponde a -1, se non corrisponde allora l'elemento è condiviso senno non lo è ci aspettiamo 84 -1 in console
-                    const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
-                    element.classList.add("red")
-                    boxElement.innerHTML = skull;
-                    console.log("You lose");
-                    element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
-
-                } else {
-                    element.innerHTML = heart
-                    element.classList.add("green")
-                }
-            })
+            element.addEventListener("click", function () {
+                clickBox(skullArray, myArray, element, index, box, skull, heart);
+            });
         }
+
     } else if (options.value === "impossibile") {
 
         generateGrid(49, container, markup, "700px", "700px")
@@ -94,7 +79,6 @@ function play() {
         let myArray = []
 
         generateMyArray(myArray, 49)
-
 
         let skullArray = []
 
@@ -106,29 +90,17 @@ function play() {
 
         for (let index = 0; index < box.length; index++) {
             const element = box[index];
-
-            element.addEventListener("click", function clickBox() {
-
-                const sharedNumbers = skullArray.indexOf(myArray[index]); // indexof() ci permette di paragonare gli indici degli array per verificare se combaciano in tutto o in parte, il risultato è o -1 se non combaciano oppure la posizione dell'elemento nell'array
-
-                if (sharedNumbers !== -1) { // !== controlla se il avlore dell'elemento non corrisponde a -1, se non corrisponde allora l'elemento è condiviso senno non lo è ci aspettiamo 84 -1 in console
-                    const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
-                    element.classList.add("red")
-                    boxElement.innerHTML = skull;
-                    console.log("You lose");
-                    element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
-
-                } else {
-                    element.innerHTML = heart
-                    element.classList.add("green")
-                }
-            })
+            element.addEventListener("click", function () {
+                clickBox(skullArray, myArray, element, index, box, skull, heart);
+            });
         }
 
     }
 }
 
 
+
+// Zona funzioni
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -171,7 +143,7 @@ function clickBox(skullArray, myArray, element, index, box, skull, heart) {
         element.classList.add("red")
         element.innerHTML = skull;
         console.log("You lose");
-        // element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
+        element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
 
     } else {
         element.innerHTML = heart
