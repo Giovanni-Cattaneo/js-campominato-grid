@@ -81,6 +81,7 @@ function play() {
             element.addEventListener("click", function () {
                 element.classList.toggle("blue")
                 console.log(myArray[index]);
+                element.innerHTML = myArray[index]
             })
         }
     } else if (options.value === "impossibile") {
@@ -111,6 +112,7 @@ function play() {
             element.addEventListener("click", function () {
                 element.classList.toggle("blue")
                 console.log(myArray[index]);
+                element.innerHTML = myArray[index]
             })
         }
 
