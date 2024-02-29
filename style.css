@@ -5,7 +5,11 @@
 }
 
 body{
+    text-align: center;
+}
 
+.fa-heart{
+    color: red;
 }
 
 .controls{

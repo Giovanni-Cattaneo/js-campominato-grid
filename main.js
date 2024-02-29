@@ -12,6 +12,8 @@ const markup = `<div class="box"></div>`; // serve a creare i div con classe box
 
 const skull = `<i class="fa-solid fa-skull"></i>`
 
+const heart = `<i class="fa-solid fa-heart"></i>`
+
 const options = document.getElementById("select")
 
 console.log(options);
@@ -66,21 +68,12 @@ function play() {
                         element.classList.add("red")
                         boxElement.innerHTML = skull;
                         console.log("You lose");
-                        boxElement.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
+                        element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
                         
                     } else {
-                        element.innerHTML = myArray[index]
+                        element.innerHTML = heart
                         element.classList.add("green")
                     }
-                
-                
-
-
-
-                // if (element.innerHTML.includes(myArray[index], skullArray[index])) {
-                //     element.innerHTML = "hello"
-                // }
-
             })
         }
 
@@ -171,4 +164,16 @@ function generateGrid(cellNumber){
 }
 
 */
-
+function clickBox() {
+    const sharedNumbers = skullArray.indexOf(myArray[index]);
+    if (sharedNumbers !== -1) {
+        const boxElement = box[index];
+        element.classList.add("red");
+        boxElement.innerHTML = skull;
+        console.log("You lose");
+        boxElement.removeEventListener("click", clickBox);
+    } else {
+        element.innerHTML = myArray[index];
+        element.classList.add("green");
+    }
+}
