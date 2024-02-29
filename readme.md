@@ -54,8 +54,8 @@ Le validazioni e i controlli possiamo farli anche in un secondo momento.
 
 
 Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: i funghi magici.
-
 Attenzione: nella stessa cella può essere posizionato al massimo un fungo, perciò nell’array dei funghi non potranno esserci due numeri uguali.
+- Crea un array di 16 numeri casuali non ripetuti
 
 In seguito l'utente clicca su una cella: se il numero è presente nella lista dei numeri generati
 - abbiamo calpestato una fungo
