@@ -150,3 +150,7 @@ function clickBox(skullArray, myArray, element, index, box, skull, heart) {
         element.classList.add("green")
     }
 }
+
+function counter(){
+    
+}
