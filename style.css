@@ -48,3 +48,9 @@ body{
 .red{
     background-color: red;
 }
+
+#score{
+    font-size: 2rem;
+    border: 1px solid black;
+    padding: 1rem;
+}

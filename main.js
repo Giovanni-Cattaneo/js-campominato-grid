@@ -18,6 +18,8 @@ const options = document.getElementById("select")
 
 console.log(options);
 
+const score = document.getElementById("score")
+
 btn.addEventListener("click", play)
 
 /**
@@ -142,11 +144,18 @@ function clickBox(skullArray, myArray, element, index, box, skull, heart) {
         const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
         element.classList.add("red")
         element.innerHTML = skull;
-        console.log("You lose");
-        element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
+        gameOver()
+        // element.removeEventListener("click", clickBox); // dovrebbe rimuovere l'elemento click ma non lo fa indagare meglio dopo
 
     } else {
         element.innerHTML = heart
         element.classList.add("green")
     }
+}
+
+function gameOver() {
+    const greenScore = document.getElementsByClassName("green").length
+
+    score.innerHTML = `Hai trovato ${greenScore} cuori, game over`;
+    return;
 }
