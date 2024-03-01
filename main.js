@@ -153,13 +153,9 @@ function clickBox(skullArray, myArray, element, index, box, skull, heart) {
     }
 }
 
-function gameOver(element) {
-    element = element
+function gameOver() {
     const greenScore = document.getElementsByClassName("green").length
 
     score.innerHTML = `Hai trovato ${greenScore} cuori, game over`;
 
-    if (score.innerHTML = `Hai trovato ${greenScore} cuori, game over`) {
-        console.log("hello");
-    }
 }
