@@ -8,6 +8,8 @@ console.log(btn, container);
 
 let cellNumber;
 
+const resetBtn = document.getElementById("resetButton")
+
 const markup = `<div class="box"></div>`; // serve a creare i div con classe box in html
 
 const skull = `<i class="fa-solid fa-skull"></i>`
@@ -98,6 +100,8 @@ function play() {
         }
 
     }
+
+
 }
 
 
@@ -115,7 +119,7 @@ function generateMyArray(myArray, cellNumber) {
     return myArray
 }
 
-function generateSkullArray(skullArray , cellNumber) {
+function generateSkullArray(skullArray, cellNumber) {
     for (let index = 0; skullArray.length < 16; index++) {
         const randomNumber = getRndInteger(1, cellNumber);
         if (!skullArray.includes(randomNumber)) { // Verifica se il numero casuale non è già presente nell'array
@@ -140,6 +144,7 @@ function clickBox(skullArray, myArray, element, index, box, skull, heart) {
     box = box[index]
     const sharedNumbers = skullArray.indexOf(myArray[index]); // indexof() ci permette di paragonare gli indici degli array per verificare se combaciano in tutto o in parte, il risultato è o -1 se non combaciano oppure la posizione dell'elemento nell'array
 
+
     if (sharedNumbers !== -1) { // !== controlla se il avlore dell'elemento non corrisponde a -1, se non corrisponde allora l'elemento è condiviso senno non lo è ci aspettiamo 84 -1 in console
         const boxElement = box[index]; // costante creata per recuperare index di box dalla dom
         element.classList.add("red")
@@ -156,6 +161,14 @@ function clickBox(skullArray, myArray, element, index, box, skull, heart) {
 function gameOver() {
     const greenScore = document.getElementsByClassName("green").length
 
-    score.innerHTML = `Hai trovato ${greenScore} cuori, game over`;
+    score.style.display = "block";
 
+    score.innerHTML += `Hai trovato ${greenScore} cuori, game over`;
+    resetBtn.addEventListener("click", resetButton())
 }
+
+function resetButton() {
+    console.log("Hello world");
+}
+
+
