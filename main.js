@@ -36,7 +36,7 @@ function play() {
 
         let skullArray = []
 
-        generateSkullArray(skullArray)
+        generateSkullArray(skullArray, 100)
 
         console.log(myArray, skullArray);
 
@@ -60,7 +60,7 @@ function play() {
 
         let skullArray = []
 
-        generateSkullArray(skullArray)
+        generateSkullArray(skullArray, 81)
 
         console.log(myArray, skullArray);
 
@@ -84,7 +84,7 @@ function play() {
 
         let skullArray = []
 
-        generateSkullArray(skullArray)
+        generateSkullArray(skullArray, 49)
 
         console.log(myArray, skullArray);
 
@@ -115,9 +115,9 @@ function generateMyArray(myArray, cellNumber) {
     return myArray
 }
 
-function generateSkullArray(skullArray) {
-    for (let index = 0; skullArray.length < 17; index++) {
-        const randomNumber = getRndInteger(1, 100);
+function generateSkullArray(skullArray , cellNumber) {
+    for (let index = 0; skullArray.length < 16; index++) {
+        const randomNumber = getRndInteger(1, cellNumber);
         if (!skullArray.includes(randomNumber)) { // Verifica se il numero casuale non è già presente nell'array
             skullArray.push(randomNumber);
         }
