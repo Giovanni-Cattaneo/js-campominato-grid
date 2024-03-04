@@ -57,5 +57,9 @@ body{
 
 .none{
     background-color: blue;
-    color: transparent;
+    color: blue;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    line-height: 100px;
 }
