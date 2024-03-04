@@ -8,7 +8,6 @@ console.log(btn, container);
 
 let cellNumber;
 
-const resetBtn = document.getElementById("resetButton")
 
 const markup = `<div class="box"></div>`; // serve a creare i div con classe box in html
 
@@ -24,13 +23,12 @@ const score = document.getElementById("score")
 
 btn.addEventListener("click", play)
 
-resetBtn.addEventListener("click", resetButton)
-
 /**
  * Al click del bottone genera la griglia di gioco
  */
 function play() {
     container.innerHTML = ""
+    score.style.display = "none";
     if (options.value === "standard") {
         generateGrid(100, container, markup, "1000px", "1000px")
 
@@ -167,11 +165,12 @@ function gameOver() {
 
     score.style.display = "block";
 
-    score.innerHTML += `Hai trovato ${greenScore} cuori, game over`;
+    score.innerHTML = `
+    <h3>Hai trovato ${greenScore} cuori, game over</h3>
+    <h5>Per ricominciare seleziona una nuova difficolta e premi inizia il gioco</h5>
+    `;
 }
 
-function resetButton() {
-    console.log("Hello world");
-}
+
 
 
