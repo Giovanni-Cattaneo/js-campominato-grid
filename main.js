@@ -24,6 +24,8 @@ const score = document.getElementById("score")
 
 btn.addEventListener("click", play)
 
+resetBtn.addEventListener("click", resetButton)
+
 /**
  * Al click del bottone genera la griglia di gioco
  */
@@ -97,12 +99,14 @@ function play() {
             element.addEventListener("click", function () {
                 clickBox(skullArray, myArray, element, index, box, skull, heart);
             });
+            
         }
-
+        
     }
-
-
+    
+    
 }
+
 
 
 
@@ -164,7 +168,6 @@ function gameOver() {
     score.style.display = "block";
 
     score.innerHTML += `Hai trovato ${greenScore} cuori, game over`;
-    resetBtn.addEventListener("click", resetButton())
 }
 
 function resetButton() {
